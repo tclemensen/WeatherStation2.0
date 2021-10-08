@@ -1,5 +1,7 @@
 <?php
 
+// This file goes on your Web / MySQL server
+
 /* Based off the work of Rui Santos, see copyright notice below.
    I am not an PHP expert, so credit for this code goes to where it is deserved
    The code is adapted to suit my project
@@ -22,15 +24,15 @@
 $servername = "localhost";
 
 // Database name
-$dbname = "-- ENTER DATABASE NAME HERE --";
+$dbname = "weather_log";
 // Database username
-$username = "-- ENTER YOUR DATABASE USERNAME HERE --";
+$username = "sensor";
 // Database user password
-$password = "-- ENTER YOUR DATABASE PASSWORD HERE --";
+$password = "SensorDataLogger";
 
 
 // API Key value. The API key in the ESP8266 sketch must match
-$api_key_value = "-- INSERT A SAFE API PASSWORD HERE --";
+$api_key_value = "hMRc34aXPaEMfByV";
 
 $api_key= $sensor = $location = $value1 = $value2 = $value3 = "";
 
@@ -50,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             die("Connection failed: " . $conn->connect_error);
         } 
         
-        $sql = "INSERT INTO SensorData (sensor, location, value1, value2, value3)
+        $sql = "INSERT INTO SensorData (sensor, location, temperature, humidity, pressure)
         VALUES ('" . $sensor . "', '" . $location . "', '" . $value1 . "', '" . $value2 . "', '" . $value3 . "')";
         
         if ($conn->query($sql) === TRUE) {
