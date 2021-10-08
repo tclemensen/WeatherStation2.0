@@ -9,7 +9,7 @@
 const char *ssid = "ENTER_YOUR_SSID_HERE";
 const char *passwd = "ENTER_YOUR_WIFI_PASSWORD_HERE";
 
-const char *serverName = "http://myprojectblog.ddns.net/post-esp-data.php";
+const char *serverName = "http://EXAMPLE.NET/post-esp-data.php";
 
 Adafruit_BME280 bme;
 
