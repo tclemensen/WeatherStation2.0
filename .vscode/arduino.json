@@ -1,0 +1,7 @@
+{
+    "sketch": "test.cpp",
+    "board": "arduino:avr:uno",
+    "programmer": "arduino:arduinoisp",
+    "output": "./ArduinoOutput",
+    "port": "/dev/ttyUSB0"
+}
