@@ -17,6 +17,7 @@
             "intelliSenseMode": "gcc-x64",
             "includePath": [
                 "/home/trond/.arduino15/**",
+                "/home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/libraries/ESP8266WiFi/src/",
                 "/home/trond/Arduino/libraries/**",
                 "/home/trond/Documents/arduino-1.8.16/hardware/arduino/avr/cores/arduino",
                 "/home/trond/Documents/arduino-1.8.16/hardware/arduino/avr/variants/standard",

@@ -1,5 +1,5 @@
 {
-  "additionalFiles": "..,..",
+  "additionalFiles": "..",
   "builtInLibrariesFolders": "/home/trond/Documents/arduino-1.8.16/libraries",
   "builtInToolsFolders": "/home/trond/Documents/arduino-1.8.16/tools-builder,/home/trond/Documents/arduino-1.8.16/hardware/tools/avr,/home/trond/.arduino15/packages",
   "compiler.optimization_flags": "",
@@ -8,5 +8,5 @@
   "hardwareFolders": "/home/trond/Documents/arduino-1.8.16/hardware,/home/trond/.arduino15/packages",
   "otherLibrariesFolders": "/home/trond/Arduino/libraries",
   "runtime.ide.version": "10816",
-  "sketchLocation": "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.cpp"
+  "sketchLocation": "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 }
