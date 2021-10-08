@@ -6,8 +6,8 @@
 #include <ESP8266HTTPClient.h>
 #include <WiFiClient.h>
 
-const char *ssid = "Telenor1289bag";
-const char *passwd = "Medferd5Leksikonartikkel4";
+const char *ssid = "ENTER_YOUR_SSID_HERE";
+const char *passwd = "ENTER_YOUR_WIFI_PASSWORD_HERE";
 
 const char *serverName = "http://myprojectblog.ddns.net/post-esp-data.php";
 
