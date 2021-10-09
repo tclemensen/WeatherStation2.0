@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#line 1 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
+#line 1 "/home/trond/source/WeatherStation2.0/WeatherStation2.0/readsensor.ino"
 #include <Wire.h>
 #include <Adafruit_Sensor.h>
 #include <Adafruit_BME280.h>
@@ -17,6 +17,13 @@ Adafruit_BME280 bme;
 
 #define SEALEVELPRESSURE_HPA (1013.25)
 
+#line 18 "/home/trond/source/WeatherStation2.0/WeatherStation2.0/readsensor.ino"
+void setup();
+#line 47 "/home/trond/source/WeatherStation2.0/WeatherStation2.0/readsensor.ino"
+void loop();
+#line 53 "/home/trond/source/WeatherStation2.0/WeatherStation2.0/readsensor.ino"
+void readSensors();
+#line 18 "/home/trond/source/WeatherStation2.0/WeatherStation2.0/readsensor.ino"
 void setup()
 {
     // Initialising serial port

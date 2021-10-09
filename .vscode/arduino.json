@@ -1,5 +1,5 @@
 {
-    "board": "arduino:avr:uno",
+    "board": "esp8266:esp8266:generic",
     "programmer": "arduino:arduinoisp",
     "output": "./ArduinoOutput",
     "port": "/dev/ttyUSB0",
