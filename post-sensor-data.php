@@ -34,16 +34,16 @@ $password = "SensorDataLogger";
 // API Key value. The API key in the ESP8266 sketch must match
 $api_key_value = "hMRc34aXPaEMfByV";
 
-$api_key= $sensor = $location = $value1 = $value2 = $value3 = "";
+$api_key= $sensor = $location = $temperature = $humidity = $pressure = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $api_key = test_input($_POST["api_key"]);
     if($api_key == $api_key_value) {
         $sensor = test_input($_POST["sensor"]);
         $location = test_input($_POST["location"]);
-        $value1 = test_input($_POST["value1"]);
-        $value2 = test_input($_POST["value2"]);
-        $value3 = test_input($_POST["value3"]);
+        $temperature = test_input($_POST["temperature"]);
+        $humidity = test_input($_POST["humidity"]);
+        $pressure = test_input($_POST["pressure"]);
         
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -53,7 +53,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } 
         
         $sql = "INSERT INTO SensorData (sensor, location, temperature, humidity, pressure)
-        VALUES ('" . $sensor . "', '" . $location . "', '" . $value1 . "', '" . $value2 . "', '" . $value3 . "')";
+        VALUES ('" . $sensor . "', '" . $location . "', '" . $temperature . "', '" . $humidity . "', '" . $pressure . "')";
         
         if ($conn->query($sql) === TRUE) {
             echo "New record created successfully";
