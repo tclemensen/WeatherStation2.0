@@ -30,27 +30,52 @@ void setup()
     Serial.begin(115200);
     delay(100);
 
-    // Attempting to start the BME280 sensor at I2C address 0x76
+    /* Attempting to start the BME280 sensor at I2C address 0x76
+
     bool status = bme.begin(0x76);
+
     if (!status)
+
     {
+
         Serial.println("No BME280 sensor found. Check wiring!");
+
     }
+
+
 
     // Attempting to start Wifi
+
     WiFi.begin(ssid, passwd);
+
     Serial.print("Initialising ");
+
     while (WiFi.status() != WL_CONNECTED)
+
     {
+
         delay(1000);
+
         Serial.print(". ");
+
     }
 
+
+
     // Displaying Wifi info to serial console.
+
     Serial.println("");
+
     Serial.println("WiFi Connected!");
+
     Serial.print("Device IP : ");
-    Serial.println(WiFi.localIP());
+
+    Serial.println(WiFi.localIP()); 
+
+    */
+# 55 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
+    startWiFi();
+    delay(1000);
 }
 
 void loop()
@@ -156,43 +181,97 @@ void loop()
     }
 
     //Send an HTTP POST request every 30 seconds */
-# 109 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
+# 113 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
+    // readSensors();
+
     readSensors();
+    delay(1000);
+    //stopWiFi();
     delay(30000);
+}
+
+void startWiFi()
+{
+    // This is probably not the best way of doing this
+    // More research is needed.
+
+    WiFi.begin(ssid, passwd);
+    Serial.print("Initialising ");
+    while (WiFi.status() != WL_CONNECTED)
+    {
+        delay(1000);
+        Serial.print(". ");
+    }
+
+    // Displaying Wifi info to serial console.
+    Serial.println("");
+    Serial.println("WiFi Connected!");
+    Serial.print("Device IP : ");
+    Serial.println(WiFi.localIP());
+
+    delay(100);
+    if (WiFi.status() == WL_CONNECTED)
+    {
+        // readSensors();
+        Serial.println("If you see this, then WiFi is Connected!");
+    }
+    else
+    {
+        Serial.println("WiFi connection failed!");
+    }
 }
 
 void readSensors()
 {
+    /*
 
     float temperature = bme.readTemperature();
+
     float humidity = bme.readHumidity();
+
     float pressure = bme.readPressure();
 
+    */
+# 160 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
+    Serial.println("If you can see this - it works thus far");
+
+    WiFiClient client;
+    HTTPClient http;
+
+    Serial.println("Wificlient and httpclient initialised");
+
+    http.begin(client, serverName);
+
+    Serial.println(("HTTP Begin Successful!"))
+
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    String httpRequestData = "api_key=" + apiKeyValue + "&sensor=" + sensorName + "&location=" + sensorLocation + "&temperature=" + String(bme.readTemperature()) + "&humidity=" + String(bme.readHumidity()) + "&pressure=" + String(bme.readPressure() / 100.0F) + "";
+    Serial.print("httpRequestData: ");
+    Serial.println(httpRequestData);
+
+    int httpResponseCode = http.POST(httpRequestData);
+
+    if (httpResponseCode > 0)
+    {
+        Serial.print("HTTP Response code: ");
+        Serial.println(httpResponseCode);
+    }
+    else
+    {
+        Serial.print("Error code: ");
+        Serial.println(httpResponseCode);
+    }
+    // Free resources
+    http.end();
+}
+
+void stopWiFi()
+{
     if (WiFi.status() == WL_CONNECTED)
     {
-        WiFiClient client;
-        HTTPClient http;
-        http.begin(client, serverName);
-
-        http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-
-        String httpRequestData = "api_key=" + apiKeyValue + "&sensor=" + sensorName + "&location=" + sensorLocation + "&temperature=" + String(bme.readTemperature()) + "&humidity=" + String(bme.readHumidity()) + "&pressure=" + String(bme.readPressure() / 100.0F) + "";
-        Serial.print("httpRequestData: ");
-        Serial.println(httpRequestData);
-
-        int httpResponseCode = http.POST(httpRequestData);
-
-        if (httpResponseCode > 0)
-        {
-            Serial.print("HTTP Response code: ");
-            Serial.println(httpResponseCode);
-        }
-        else
-        {
-            Serial.print("Error code: ");
-            Serial.println(httpResponseCode);
-        }
-        // Free resources
-        http.end();
+        WiFi.mode(WIFI_OFF);
+        WiFi.forceSleepBegin();
+        Serial.println("WiFi is down");
     }
 }
