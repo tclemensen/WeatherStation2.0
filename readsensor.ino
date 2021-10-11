@@ -13,7 +13,7 @@ const char *ssid = "Telenor1289bag";
 const char *passwd = "Medferd5Leksikonartikkel4";
 const char *serverName = "http://myprojectblog.ddns.net/post-sensor-data.php";
 
-String apiKeyValue = "tPmAT5Ab3j7F9";
+String apiKeyValue = "hMRc34aXPaEMfByV";
 
 String sensorName = "BME280";
 String sensorLocation = "Test";
@@ -54,6 +54,7 @@ void setup()
 
 void loop()
 {
+    /*
     //Check WiFi connection status
     if (WiFi.status() == WL_CONNECTED)
     {
@@ -103,7 +104,9 @@ void loop()
     {
         Serial.println("WiFi Disconnected");
     }
-    //Send an HTTP POST request every 30 seconds
+    //Send an HTTP POST request every 30 seconds */
+
+    readSensors();
     delay(30000);
 }
 
@@ -119,5 +122,26 @@ void readSensors()
         WiFiClient client;
         HTTPClient http;
         http.begin(client, serverName);
+
+        http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        String httpRequestData = "api_key=" + apiKeyValue + "&sensor=" + sensorName + "&location=" + sensorLocation + "&temperature=" + String(bme.readTemperature()) + "&humidity=" + String(bme.readHumidity()) + "&pressure=" + String(bme.readPressure() / 100.0F) + "";
+        Serial.print("httpRequestData: ");
+        Serial.println(httpRequestData);
+
+        int httpResponseCode = http.POST(httpRequestData);
+
+        if (httpResponseCode > 0)
+        {
+            Serial.print("HTTP Response code: ");
+            Serial.println(httpResponseCode);
+        }
+        else
+        {
+            Serial.print("Error code: ");
+            Serial.println(httpResponseCode);
+        }
+        // Free resources
+        http.end();
     }
 }

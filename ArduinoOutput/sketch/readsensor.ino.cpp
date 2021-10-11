@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#line 1 "/home/trond/source/WeatherStation2.0/WeatherStation2.0/readsensor.ino"
+#line 1 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 // It is assumed that you are using a ESP8266 board. For other boards, be aware some of these includes will be different
 // Change to suit your own needs
 
@@ -15,7 +15,7 @@ const char *ssid = "Telenor1289bag";
 const char *passwd = "Medferd5Leksikonartikkel4";
 const char *serverName = "http://myprojectblog.ddns.net/post-sensor-data.php";
 
-String apiKeyValue = "tPmAT5Ab3j7F9";
+String apiKeyValue = "hMRc34aXPaEMfByV";
 
 String sensorName = "BME280";
 String sensorLocation = "Test";
@@ -25,13 +25,13 @@ Adafruit_BME280 bme;
 
 #define SEALEVELPRESSURE_HPA (1013.25) // Defined standard sea level pressure.
 
-#line 26 "/home/trond/source/WeatherStation2.0/WeatherStation2.0/readsensor.ino"
+#line 26 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 void setup();
-#line 55 "/home/trond/source/WeatherStation2.0/WeatherStation2.0/readsensor.ino"
+#line 55 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 void loop();
-#line 110 "/home/trond/source/WeatherStation2.0/WeatherStation2.0/readsensor.ino"
+#line 113 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 void readSensors();
-#line 26 "/home/trond/source/WeatherStation2.0/WeatherStation2.0/readsensor.ino"
+#line 26 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 void setup()
 {
     // Initialising serial port
@@ -63,6 +63,7 @@ void setup()
 
 void loop()
 {
+    /*
     //Check WiFi connection status
     if (WiFi.status() == WL_CONNECTED)
     {
@@ -112,7 +113,9 @@ void loop()
     {
         Serial.println("WiFi Disconnected");
     }
-    //Send an HTTP POST request every 30 seconds
+    //Send an HTTP POST request every 30 seconds */
+
+    readSensors();
     delay(30000);
 }
 
@@ -128,5 +131,26 @@ void readSensors()
         WiFiClient client;
         HTTPClient http;
         http.begin(client, serverName);
+
+        http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+
+        String httpRequestData = "api_key=" + apiKeyValue + "&sensor=" + sensorName + "&location=" + sensorLocation + "&temperature=" + String(bme.readTemperature()) + "&humidity=" + String(bme.readHumidity()) + "&pressure=" + String(bme.readPressure() / 100.0F) + "";
+        Serial.print("httpRequestData: ");
+        Serial.println(httpRequestData);
+
+        int httpResponseCode = http.POST(httpRequestData);
+
+        if (httpResponseCode > 0)
+        {
+            Serial.print("HTTP Response code: ");
+            Serial.println(httpResponseCode);
+        }
+        else
+        {
+            Serial.print("Error code: ");
+            Serial.println(httpResponseCode);
+        }
+        // Free resources
+        http.end();
     }
 }

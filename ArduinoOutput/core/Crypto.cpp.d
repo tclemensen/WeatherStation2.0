@@ -1,4 +1,4 @@
-/home/trond/source/WeatherStation2.0/WeatherStation2.0/ArduinoOutput/core/Crypto.cpp.o: \
+/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/core/Crypto.cpp.o: \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/Crypto.cpp \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/Crypto.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/Arduino.h \

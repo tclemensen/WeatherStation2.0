@@ -1,4 +1,4 @@
-/home/trond/source/WeatherStation2.0/WeatherStation2.0/ArduinoOutput/core/libb64/cdecode.cpp.o: \
+/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/core/libb64/cdecode.cpp.o: \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/libb64/cdecode.cpp \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/pgmspace.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/include/ets_sys.h \

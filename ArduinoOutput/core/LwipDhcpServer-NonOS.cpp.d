@@ -1,4 +1,4 @@
-/home/trond/source/WeatherStation2.0/WeatherStation2.0/ArduinoOutput/core/LwipDhcpServer-NonOS.cpp.o: \
+/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/core/LwipDhcpServer-NonOS.cpp.o: \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/LwipDhcpServer-NonOS.cpp \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/lwip2/include/lwip/init.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/lwip2/include/lwip/opt.h \

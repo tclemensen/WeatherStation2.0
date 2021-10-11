@@ -1,4 +1,4 @@
-#line 1 "/home/trond/source/WeatherStation2.0/WeatherStation2.0/README.md"
+#line 1 "/home/trond/Source/Arduino/WeatherStation2.0/README.md"
 # WeatherStation2.0
 
 An attempt at a ESP8266 "Weather/Environment logger" type of project. The idea is to have the possibility to have several ESP8266 or ESP32 "sensor units" gathering 
