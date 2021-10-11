@@ -1,4 +1,4 @@
-/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/libraries/Adafruit_BME280_Library/Adafruit_BME280.cpp.o: \
+/home/trond/source/WeatherStation2.0/ArduinoOutput/libraries/Adafruit_BME280_Library/Adafruit_BME280.cpp.o: \
  /home/trond/Arduino/libraries/Adafruit_BME280_Library/Adafruit_BME280.cpp \
  /home/trond/Arduino/libraries/Adafruit_BME280_Library/Adafruit_BME280.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/Arduino.h \

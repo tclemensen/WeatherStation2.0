@@ -1,4 +1,4 @@
-/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/core/Updater.cpp.o: \
+/home/trond/source/WeatherStation2.0/ArduinoOutput/core/Updater.cpp.o: \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/Updater.cpp \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/Updater.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/Arduino.h \
@@ -48,7 +48,7 @@
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/eboot_command.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/esp8266_peri.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/StackThunk.h \
- /home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/core/Updater_Signing.h \
+ /home/trond/source/WeatherStation2.0/ArduinoOutput/core/Updater_Signing.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/include/user_interface.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/include/os_type.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/include/ets_sys.h \

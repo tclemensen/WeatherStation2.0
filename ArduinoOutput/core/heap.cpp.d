@@ -1,4 +1,4 @@
-/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/core/heap.cpp.o: \
+/home/trond/source/WeatherStation2.0/ArduinoOutput/core/heap.cpp.o: \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/heap.cpp \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/umm_malloc/umm_malloc.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/umm_malloc/umm_malloc_cfg.h \

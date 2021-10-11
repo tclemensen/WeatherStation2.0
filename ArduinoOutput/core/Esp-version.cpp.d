@@ -1,4 +1,4 @@
-/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/core/Esp-version.cpp.o: \
+/home/trond/source/WeatherStation2.0/ArduinoOutput/core/Esp-version.cpp.o: \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/Esp-version.cpp \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/Arduino.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/stdlib_noniso.h \

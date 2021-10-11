@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#line 1 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
+#line 1 "/home/trond/source/WeatherStation2.0/readsensor.ino"
 // It is assumed that you are using a ESP8266 board. For other boards, be aware some of these includes will be different
 // Change to suit your own needs
 
@@ -25,31 +25,31 @@ Adafruit_BME280 bme;
 
 #define SEALEVELPRESSURE_HPA (1013.25) // Defined standard sea level pressure.
 
-#line 26 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
+#line 26 "/home/trond/source/WeatherStation2.0/readsensor.ino"
 void setup();
-#line 59 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
+#line 59 "/home/trond/source/WeatherStation2.0/readsensor.ino"
 void loop();
-#line 121 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
-void startWiFi();
-#line 152 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
+#line 71 "/home/trond/source/WeatherStation2.0/readsensor.ino"
 void readSensors();
-#line 193 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
+#line 111 "/home/trond/source/WeatherStation2.0/readsensor.ino"
+void startWiFi();
+#line 142 "/home/trond/source/WeatherStation2.0/readsensor.ino"
 void stopWiFi();
-#line 26 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
+#line 26 "/home/trond/source/WeatherStation2.0/readsensor.ino"
 void setup()
 {
     // Initialising serial port
     Serial.begin(115200);
     delay(100);
 
-    /* Attempting to start the BME280 sensor at I2C address 0x76
+    // Attempting to start the BME280 sensor at I2C address 0x76
     bool status = bme.begin(0x76);
     if (!status)
     {
         Serial.println("No BME280 sensor found. Check wiring!");
     }
 
-    // Attempting to start Wifi
+    /* Attempting to start Wifi
     WiFi.begin(ssid, passwd);
     Serial.print("Initialising ");
     while (WiFi.status() != WL_CONNECTED)
@@ -71,64 +71,54 @@ void setup()
 
 void loop()
 {
-    /*
-    //Check WiFi connection status
-    if (WiFi.status() == WL_CONNECTED)
+
+    // readSensors();
+    startWiFi();
+    delay(1000);
+    readSensors();
+    delay(1000);
+    stopWiFi();
+    delay(30000);
+}
+
+void readSensors()
+{
+
+    float temperature = bme.readTemperature();
+    float humidity = bme.readHumidity();
+    float pressure = bme.readPressure();
+
+    Serial.println("If you can see this - it works thus far");
+
+    WiFiClient client;
+    HTTPClient http;
+
+    Serial.println("Wificlient and httpclient initialised");
+
+    http.begin(client, serverName);
+
+    Serial.println("HTTP Begin Successful!");
+
+    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
+
+    String httpRequestData = "api_key=" + apiKeyValue + "&sensor=" + sensorName + "&location=" + sensorLocation + "&temperature=" + String(bme.readTemperature()) + "&humidity=" + String(bme.readHumidity()) + "&pressure=" + String(bme.readPressure() / 100.0F) + "";
+    Serial.print("httpRequestData: ");
+    Serial.println(httpRequestData);
+
+    int httpResponseCode = http.POST(httpRequestData);
+
+    if (httpResponseCode > 0)
     {
-        WiFiClient client;
-        HTTPClient http;
-
-        // Your Domain name with URL path or IP address with path
-        http.begin(client, serverName);
-
-        // Specify content-type header
-        http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-
-        // Prepare your HTTP POST request data
-        String httpRequestData = "api_key=" + apiKeyValue + "&sensor=" + sensorName + "&location=" + sensorLocation + "&temperature=" + String(bme.readTemperature()) + "&humidity=" + String(bme.readHumidity()) + "&pressure=" + String(bme.readPressure() / 100.0F) + "";
-        Serial.print("httpRequestData: ");
-        Serial.println(httpRequestData);
-
-        // You can comment the httpRequestData variable above
-        // then, use the httpRequestData variable below (for testing purposes without the BME280 sensor)
-        //String httpRequestData = "api_key=tPmAT5Ab3j7F9&sensor=BME280&location=Office&temperature=24.75&humidity=49.54&pressure=1005.14";
-
-        // Send HTTP POST request
-        int httpResponseCode = http.POST(httpRequestData);
-
-        // If you need an HTTP request with a content type: text/plain
-        //http.addHeader("Content-Type", "text/plain");
-        //int httpResponseCode = http.POST("Hello, World!");
-
-        // If you need an HTTP request with a content type: application/json, use the following:
-        //http.addHeader("Content-Type", "application/json");
-        //int httpResponseCode = http.POST("{\"temperature\":\"19\",\"humidity\":\"67\",\"pressure\":\"78\"}");
-
-        if (httpResponseCode > 0)
-        {
-            Serial.print("HTTP Response code: ");
-            Serial.println(httpResponseCode);
-        }
-        else
-        {
-            Serial.print("Error code: ");
-            Serial.println(httpResponseCode);
-        }
-        // Free resources
-        http.end();
+        Serial.print("HTTP Response code: ");
+        Serial.println(httpResponseCode);
     }
     else
     {
-        Serial.println("WiFi Disconnected");
+        Serial.print("Error code: ");
+        Serial.println(httpResponseCode);
     }
-    //Send an HTTP POST request every 30 seconds */
-
-    // readSensors();
-
-    readSensors();
-    delay(1000);
-    //stopWiFi();
-    delay(30000);
+    // Free resources
+    http.end();
 }
 
 void startWiFi()
@@ -160,47 +150,6 @@ void startWiFi()
     {
         Serial.println("WiFi connection failed!");
     }
-}
-
-void readSensors()
-{
-    /*
-    float temperature = bme.readTemperature();
-    float humidity = bme.readHumidity();
-    float pressure = bme.readPressure();
-    */
-
-    Serial.println("If you can see this - it works thus far");
-
-    WiFiClient client;
-    HTTPClient http;
-
-    Serial.println("Wificlient and httpclient initialised");
-
-    http.begin(client, serverName);
-
-    Serial.println(("HTTP Begin Successful!"))
-
-    http.addHeader("Content-Type", "application/x-www-form-urlencoded");
-
-    String httpRequestData = "api_key=" + apiKeyValue + "&sensor=" + sensorName + "&location=" + sensorLocation + "&temperature=" + String(bme.readTemperature()) + "&humidity=" + String(bme.readHumidity()) + "&pressure=" + String(bme.readPressure() / 100.0F) + "";
-    Serial.print("httpRequestData: ");
-    Serial.println(httpRequestData);
-
-    int httpResponseCode = http.POST(httpRequestData);
-
-    if (httpResponseCode > 0)
-    {
-        Serial.print("HTTP Response code: ");
-        Serial.println(httpResponseCode);
-    }
-    else
-    {
-        Serial.print("Error code: ");
-        Serial.println(httpResponseCode);
-    }
-    // Free resources
-    http.end();
 }
 
 void stopWiFi()

@@ -1,4 +1,4 @@
-/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/libraries/ESP8266WiFi/BearSSLHelpers.cpp.o: \
+/home/trond/source/WeatherStation2.0/ArduinoOutput/libraries/ESP8266WiFi/BearSSLHelpers.cpp.o: \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/libraries/ESP8266WiFi/src/BearSSLHelpers.cpp \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/libraries/ESP8266WiFi/src/BearSSLHelpers.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/include/bearssl/bearssl.h \
@@ -61,4 +61,4 @@
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/WString.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/Stream.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/md5.h \
- /home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/core/Updater_Signing.h
+ /home/trond/source/WeatherStation2.0/ArduinoOutput/core/Updater_Signing.h

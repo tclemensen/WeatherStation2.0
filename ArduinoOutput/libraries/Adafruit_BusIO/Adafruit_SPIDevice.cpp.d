@@ -1,7 +1,6 @@
-/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/libraries/Adafruit_BusIO/Adafruit_SPIDevice.cpp.o: \
+/home/trond/source/WeatherStation2.0/ArduinoOutput/libraries/Adafruit_BusIO/Adafruit_SPIDevice.cpp.o: \
  /home/trond/Arduino/libraries/Adafruit_BusIO/Adafruit_SPIDevice.cpp \
  /home/trond/Arduino/libraries/Adafruit_BusIO/Adafruit_SPIDevice.h \
- /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/libraries/SPI/SPI.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/Arduino.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/stdlib_noniso.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/binary.h \
@@ -46,4 +45,5 @@
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/md5.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/debug.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/variants/generic/pins_arduino.h \
- /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/variants/generic/common.h
+ /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/variants/generic/common.h \
+ /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/libraries/SPI/SPI.h
