@@ -1,13 +1,13 @@
-# 1 "/home/trond/source/WeatherStation2.0/readsensor.ino"
+# 1 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 // It is assumed that you are using a ESP8266 board. For other boards, be aware some of these includes will be different
 // Change to suit your own needs
 
-# 5 "/home/trond/source/WeatherStation2.0/readsensor.ino" 2
-# 6 "/home/trond/source/WeatherStation2.0/readsensor.ino" 2
-# 7 "/home/trond/source/WeatherStation2.0/readsensor.ino" 2
-# 8 "/home/trond/source/WeatherStation2.0/readsensor.ino" 2
-# 9 "/home/trond/source/WeatherStation2.0/readsensor.ino" 2
-# 10 "/home/trond/source/WeatherStation2.0/readsensor.ino" 2
+# 5 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino" 2
+# 6 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino" 2
+# 7 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino" 2
+# 8 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino" 2
+# 9 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino" 2
+# 10 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino" 2
 
 // Setting various constants for connectivity
 const char *ssid = "Telenor1289bag";
@@ -66,7 +66,7 @@ void setup()
     Serial.println(WiFi.localIP()); 
 
     */
-# 55 "/home/trond/source/WeatherStation2.0/readsensor.ino"
+# 55 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
     startWiFi();
     delay(1000);
 }

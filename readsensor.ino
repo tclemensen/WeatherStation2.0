@@ -36,30 +36,12 @@ void setup()
         Serial.println("No BME280 sensor found. Check wiring!");
     }
 
-    /* Attempting to start Wifi
-    WiFi.begin(ssid, passwd);
-    Serial.print("Initialising ");
-    while (WiFi.status() != WL_CONNECTED)
-    {
-        delay(1000);
-        Serial.print(". ");
-    }
-
-    // Displaying Wifi info to serial console.
-    Serial.println("");
-    Serial.println("WiFi Connected!");
-    Serial.print("Device IP : ");
-    Serial.println(WiFi.localIP()); 
-    */
-
     startWiFi();
     delay(1000);
 }
 
 void loop()
 {
-
-    // readSensors();
     startWiFi();
     delay(1000);
     readSensors();
@@ -70,25 +52,15 @@ void loop()
 
 void readSensors()
 {
-
-    float temperature = bme.readTemperature();
-    float humidity = bme.readHumidity();
-    float pressure = bme.readPressure();
-
-    Serial.println("If you can see this - it works thus far");
-
     WiFiClient client;
     HTTPClient http;
 
-    Serial.println("Wificlient and httpclient initialised");
-
     http.begin(client, serverName);
-
-    Serial.println("HTTP Begin Successful!");
 
     http.addHeader("Content-Type", "application/x-www-form-urlencoded");
 
     String httpRequestData = "api_key=" + apiKeyValue + "&sensor=" + sensorName + "&location=" + sensorLocation + "&temperature=" + String(bme.readTemperature()) + "&humidity=" + String(bme.readHumidity()) + "&pressure=" + String(bme.readPressure() / 100.0F) + "";
+
     Serial.print("httpRequestData: ");
     Serial.println(httpRequestData);
 
@@ -104,6 +76,7 @@ void readSensors()
         Serial.print("Error code: ");
         Serial.println(httpResponseCode);
     }
+
     // Free resources
     http.end();
 }
@@ -118,7 +91,7 @@ void startWiFi()
     while (WiFi.status() != WL_CONNECTED)
     {
         delay(1000);
-        Serial.print(". ");
+        Serial.print(". "); // Just pushing some .... to the serial console to indicate that something is happening...
     }
 
     // Displaying Wifi info to serial console.
@@ -130,7 +103,6 @@ void startWiFi()
     delay(100);
     if (WiFi.status() == WL_CONNECTED)
     {
-        // readSensors();
         Serial.println("If you see this, then WiFi is Connected!");
     }
     else
@@ -141,6 +113,8 @@ void startWiFi()
 
 void stopWiFi()
 {
+    // Puts the ESP8266 into "Modem Sleep" powersaving mode.
+
     if (WiFi.status() == WL_CONNECTED)
     {
         WiFi.mode(WIFI_OFF);

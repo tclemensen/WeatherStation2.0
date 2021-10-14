@@ -1,5 +1,5 @@
 #include <Arduino.h>
-#line 1 "/home/trond/source/WeatherStation2.0/readsensor.ino"
+#line 1 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 // It is assumed that you are using a ESP8266 board. For other boards, be aware some of these includes will be different
 // Change to suit your own needs
 
@@ -25,17 +25,17 @@ Adafruit_BME280 bme;
 
 #define SEALEVELPRESSURE_HPA (1013.25) // Defined standard sea level pressure.
 
-#line 26 "/home/trond/source/WeatherStation2.0/readsensor.ino"
+#line 26 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 void setup();
-#line 59 "/home/trond/source/WeatherStation2.0/readsensor.ino"
+#line 59 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 void loop();
-#line 71 "/home/trond/source/WeatherStation2.0/readsensor.ino"
+#line 71 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 void readSensors();
-#line 111 "/home/trond/source/WeatherStation2.0/readsensor.ino"
+#line 111 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 void startWiFi();
-#line 142 "/home/trond/source/WeatherStation2.0/readsensor.ino"
+#line 142 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 void stopWiFi();
-#line 26 "/home/trond/source/WeatherStation2.0/readsensor.ino"
+#line 26 "/home/trond/Source/Arduino/WeatherStation2.0/readsensor.ino"
 void setup()
 {
     // Initialising serial port

@@ -1,4 +1,4 @@
-/home/trond/source/WeatherStation2.0/ArduinoOutput/libraries/Adafruit_BusIO/Adafruit_I2CDevice.cpp.o: \
+/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/libraries/Adafruit_BusIO/Adafruit_I2CDevice.cpp.o: \
  /home/trond/Arduino/libraries/Adafruit_BusIO/Adafruit_I2CDevice.cpp \
  /home/trond/Arduino/libraries/Adafruit_BusIO/Adafruit_I2CDevice.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/libraries/Wire/Wire.h \

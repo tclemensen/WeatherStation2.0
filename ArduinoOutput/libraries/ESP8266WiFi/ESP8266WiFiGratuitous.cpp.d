@@ -1,4 +1,4 @@
-/home/trond/source/WeatherStation2.0/ArduinoOutput/libraries/ESP8266WiFi/ESP8266WiFiGratuitous.cpp.o: \
+/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/libraries/ESP8266WiFi/ESP8266WiFiGratuitous.cpp.o: \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/libraries/ESP8266WiFi/src/ESP8266WiFiGratuitous.cpp \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/lwip2/include/lwip/etharp.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/lwip2/include/lwip/opt.h \

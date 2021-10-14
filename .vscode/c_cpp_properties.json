@@ -20,7 +20,7 @@
             "includePath": [
                 "/home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/include",
                 "/home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/lwip2/include",
-                "/home/trond/source/WeatherStation2.0/ArduinoOutput/core",
+                "/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/core",
                 "/home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266",
                 "/home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/variants/generic",
                 "/home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/libraries/Wire",

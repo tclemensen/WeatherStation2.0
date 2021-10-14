@@ -1,4 +1,4 @@
-/home/trond/source/WeatherStation2.0/ArduinoOutput/libraries/ESP8266WiFi/WiFiServerSecureBearSSL.cpp.o: \
+/home/trond/Source/Arduino/WeatherStation2.0/ArduinoOutput/libraries/ESP8266WiFi/WiFiServerSecureBearSSL.cpp.o: \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/libraries/ESP8266WiFi/src/WiFiServerSecureBearSSL.cpp \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/tools/sdk/include/osapi.h \
  /home/trond/.arduino15/packages/esp8266/hardware/esp8266/3.0.2/cores/esp8266/user_config.h \
